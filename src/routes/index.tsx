@@ -25,6 +25,7 @@ import {
 } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Miguel Brows | Cejas y micropigmentación en Apartadó" },
