@@ -102,10 +102,10 @@ function Landing() {
           </a>
 
           <img
-            src={teamImg}
-            alt="Equipo de Miguel Brows"
-            width={816}
-            height={816}
+            src={teamImg.url}
+            alt="Miguel, técnico certificado de Miguel Brows"
+            width={640}
+            height={853}
             loading="lazy"
             className="hidden size-11 rounded-full border-2 border-gold object-cover shadow-[var(--shadow-soft)] md:block"
           />
