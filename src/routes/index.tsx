@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import heroImg from "@/assets/hero.jpg";
-import teamImg from "@/assets/team.jpg";
+import teamImg from "@/assets/team-miguel.png.asset.json";
 import svcMicroblading from "@/assets/service-microblading.jpg";
 import svcLips from "@/assets/service-lips.jpg";
 import svcLashes from "@/assets/service-lashes.jpg";
