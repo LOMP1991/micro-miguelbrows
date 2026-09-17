@@ -25,6 +25,7 @@ import {
 } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Miguel Brows | Cejas y micropigmentación en Apartadó" },
@@ -41,6 +42,35 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://micro-miguelbrows.lovable.app/" },
+    ],
+    links: [{ rel: "canonical", href: "https://micro-miguelbrows.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BeautySalon",
+          name: "Miguel Brows",
+          description:
+            "Estudio de cejas: microblading, micropigmentación de labios y extensiones de pestañas en Apartadó, Colombia.",
+          url: "https://micro-miguelbrows.lovable.app/",
+          telephone: PHONE_DISPLAY,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Edificio Coomeva, consultorio 309",
+            addressLocality: "Apartadó",
+            addressRegion: "Antioquia",
+            addressCountry: "CO",
+          },
+          areaServed: "Apartadó, Antioquia, Colombia",
+          sameAs: [INSTAGRAM_MAIN, INSTAGRAM_SECOND],
+          makesOffer: SERVICES.map((s) => ({
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: s.title, description: s.text },
+          })),
+        }),
+      },
     ],
   }),
   component: Landing,
