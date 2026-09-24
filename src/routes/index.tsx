@@ -32,13 +32,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Diseño de cejas, microblading y micropigmentación con técnicos certificados CME en Apartadó, Colombia. Agenda tu cita por WhatsApp.",
+          "Rejuvenecimiento labial, micropigmentación de cejas (Strokes y Terrranova) y pestañas pelo a pelo con técnicos certificados. 9 años de experiencia en Apartadó, Colombia. Agenda tu cita por WhatsApp.",
       },
-      { property: "og:title", content: "Miguel Brows | Cejas y micropigmentación en Apartadó" },
+      { property: "og:title", content: "Miguel Brows | Cejas, labios y pestañas en Apartadó" },
       {
         property: "og:description",
         content:
-          "Diseño de cejas, microblading y labios con acabado natural. Consultorio 309, Edificio Coomeva, Apartadó.",
+          "Rejuvenecimiento labial, micropigmentación de cejas y pestañas pelo a pelo. 9 años de experiencia y garantía estética incluida. Consultorio 309, Edificio Coomeva, Apartadó.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -53,7 +53,7 @@ export const Route = createFileRoute("/")({
           "@type": "BeautySalon",
           name: "Miguel Brows",
           description:
-            "Estudio de cejas: microblading, micropigmentación de labios y extensiones de pestañas en Apartadó, Colombia.",
+            "Estudio de micropigmentación: rejuvenecimiento labial (Labios EYarira, Yayira Lips), cejas (Strokes y Terrranova EBrows) y pestañas pelo a pelo. 9 años de experiencia en Apartadó, Colombia.",
           url: "https://micro-miguelbrows.lovable.app/",
           telephone: PHONE_DISPLAY,
           address: {
