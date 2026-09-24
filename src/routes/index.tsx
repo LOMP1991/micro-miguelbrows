@@ -85,26 +85,47 @@ const NAV = [
 
 const SERVICES = [
   {
-    img: svcMicroblading,
-    title: "Microblading & diseño de cejas",
-    text: "Pelo a pelo con simetría medida según tu rostro, para unas cejas naturales que duran.",
+    img: svcLabios,
+    title: "Rejuvenecimiento labial",
+    tag: "Labios EYarira",
+    text: "Pigmentación suave que devuelve color y vitalidad a tus labios, con acabado natural y uniforme.",
+    note: null as string | null,
   },
   {
-    img: svcLips,
-    title: "Micropigmentación de labios",
-    text: "Color suave y uniforme que realza el contorno y devuelve vitalidad a tus labios.",
+    img: svcYayira,
+    title: "Yayira Lips",
+    tag: "Labios",
+    text: "Para las que quieren subir el nivel de intensidad y expresar su personalidad extrovertida y seductora. Requiere cita de consulta para evaluar tu tipo de piel y ruta de colorimetría.",
+    note: "Requiere consulta previa",
   },
   {
-    img: svcLashes,
-    title: "Extensiones de pestañas",
-    text: "Volumen a la medida, aplicado con técnica segura y materiales premium.",
+    img: svcStrokes,
+    title: "Strokes EBrows Machine",
+    tag: "Cejas",
+    text: "Técnica sublime pensada para quienes quieren ir de menos a más y conservar la mayor naturalidad posible.",
+    note: "Duración 2 años · Garantía estética incluida",
+  },
+  {
+    img: svcTerranova,
+    title: "Terrranova EBrows",
+    tag: "Cejas",
+    text: "Técnica sublime para ir de menos a más conservando la mayor naturalidad posible, con un acabado definido y elegante.",
+    note: "Duración 2 años · Garantía estética incluida",
+  },
+  {
+    img: svcPestanas,
+    title: "Pestañas pelos a pelo",
+    tag: "Pestañas",
+    text: "Requiere cita de consulta donde evaluamos tu tipo de piel y ruta de colorimetría. Una mirada con el toque que encanta.",
+    note: "Garantía estética incluida · Duración estimada 2 años",
   },
 ];
 
 const RESULTS = [
-  { img: result1, caption: "Microblading pelo a pelo" },
-  { img: result2, caption: "Diseño de cejas con simetría" },
-  { img: result3, caption: "Powder brows acabado natural" },
+  { img: svcLabios, caption: "Rejuvenecimiento labial · Labios EYarira" },
+  { img: svcStrokes, caption: "Strokes EBrows Machine · pelo a pelo" },
+  { img: svcTerranova, caption: "Terrranova EBrows · acabado natural" },
+  { img: resultPestanas, caption: "Pestañas pelos a pelo" },
 ];
 
 const TESTIMONIALS = [
