@@ -42,9 +42,9 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://micro-miguelbrows.lovable.app/" },
+      { property: "og:url", content: "https://micro-miguelbrows.vercel.app/" },
     ],
-    links: [{ rel: "canonical", href: "https://micro-miguelbrows.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://micro-miguelbrows.vercel.app/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/")({
           name: "Miguel Brows",
           description:
             "Estudio de micropigmentación: rejuvenecimiento labial (Labios EYarira, Yayira Lips), cejas (Strokes y Terrranova EBrows) y pestañas pelo a pelo. 9 años de experiencia en Apartadó, Colombia.",
-          url: "https://micro-miguelbrows.lovable.app/",
+          url: "https://micro-miguelbrows.vercel.app/",
           telephone: PHONE_DISPLAY,
           address: {
             "@type": "PostalAddress",
