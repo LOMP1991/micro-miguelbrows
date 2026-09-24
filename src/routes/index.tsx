@@ -2,12 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import heroImg from "@/assets/hero.jpg";
 import teamImg from "@/assets/team-miguel.jpg";
-import svcMicroblading from "@/assets/service-microblading.jpg";
-import svcLips from "@/assets/service-lips.jpg";
-import svcLashes from "@/assets/service-lashes.jpg";
-import result1 from "@/assets/result-1.jpg";
-import result2 from "@/assets/result-2.jpg";
-import result3 from "@/assets/result-3.jpg";
+import svcLabios from "@/assets/service-rejuvenecimiento-labial.png.asset.json";
+import svcYayira from "@/assets/service-yayira-lips.png.asset.json";
+import svcStrokes from "@/assets/service-strokes-ebrows.png.asset.json";
+import svcTerranova from "@/assets/service-terranova-ebrows.png.asset.json";
+import svcPestanas from "@/assets/service-pestanas-pelo-a-pelo.png.asset.json";
+import resultPestanas from "@/assets/result-pestanas.png.asset.json";
 import { Carousel } from "@/components/site/Carousel";
 import {
   InstagramIcon,
