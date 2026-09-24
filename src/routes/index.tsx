@@ -241,7 +241,7 @@ function Landing() {
               >
                 <div className="relative">
                   <img
-                    src={s.img}
+                    src={s.img.url}
                     alt={s.title}
                     width={1024}
                     height={768}
@@ -249,12 +249,18 @@ function Landing() {
                     className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                   <span className="absolute bottom-3 left-3 rounded-full bg-card px-3 py-1.5 text-[0.7rem] font-semibold tracking-wide text-gold shadow-[var(--shadow-soft)]">
-                    CERTIFICADO CME
+                    {s.tag}
                   </span>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl">{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
+                  {s.note ? (
+                    <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-gold-soft/60 px-3 py-1.5 text-[0.72rem] font-medium text-foreground">
+                      <span className="size-1.5 rounded-full bg-gold" aria-hidden="true" />
+                      {s.note}
+                    </p>
+                  ) : null}
                 </div>
               </article>
             ))}
@@ -318,7 +324,7 @@ function Landing() {
             items={RESULTS.map((r) => (
               <figure key={r.caption} className="overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-card)]">
                 <img
-                  src={r.img}
+                  src={r.img.url}
                   alt={r.caption}
                   width={1024}
                   height={768}
