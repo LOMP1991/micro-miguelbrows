@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import heroImg from "@/assets/hero.jpg";
-import teamImg from "@/assets/team-miguel.jpg.asset.json";
+import teamImg from "@/assets/team-miguel.jpg";
 import svcMicroblading from "@/assets/service-microblading.jpg";
 import svcLips from "@/assets/service-lips.jpg";
 import svcLashes from "@/assets/service-lashes.jpg";
@@ -132,7 +132,7 @@ function Landing() {
           </a>
 
           <img
-            src={teamImg.url}
+            src={teamImg}
             alt="Miguel, técnico certificado de Miguel Brows"
             width={640}
             height={853}
