@@ -2,12 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import heroImg from "@/assets/hero.jpg";
 import teamImg from "@/assets/team-miguel.jpg";
-import svcMicroblading from "@/assets/service-microblading.jpg";
-import svcLips from "@/assets/service-lips.jpg";
-import svcLashes from "@/assets/service-lashes.jpg";
-import result1 from "@/assets/result-1.jpg";
-import result2 from "@/assets/result-2.jpg";
-import result3 from "@/assets/result-3.jpg";
+import svcLabios from "@/assets/service-rejuvenecimiento-labial.png.asset.json";
+import svcYayira from "@/assets/service-yayira-lips.png.asset.json";
+import svcStrokes from "@/assets/service-strokes-ebrows.png.asset.json";
+import svcTerranova from "@/assets/service-terranova-ebrows.png.asset.json";
+import svcPestanas from "@/assets/service-pestanas-pelo-a-pelo.png.asset.json";
+import resultPestanas from "@/assets/result-pestanas.png.asset.json";
 import { Carousel } from "@/components/site/Carousel";
 import {
   InstagramIcon,
@@ -32,13 +32,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Diseño de cejas, microblading y micropigmentación con técnicos certificados CME en Apartadó, Colombia. Agenda tu cita por WhatsApp.",
+          "Rejuvenecimiento labial, micropigmentación de cejas (Strokes y Terrranova) y pestañas pelo a pelo con técnicos certificados. 9 años de experiencia en Apartadó, Colombia. Agenda tu cita por WhatsApp.",
       },
-      { property: "og:title", content: "Miguel Brows | Cejas y micropigmentación en Apartadó" },
+      { property: "og:title", content: "Miguel Brows | Cejas, labios y pestañas en Apartadó" },
       {
         property: "og:description",
         content:
-          "Diseño de cejas, microblading y labios con acabado natural. Consultorio 309, Edificio Coomeva, Apartadó.",
+          "Rejuvenecimiento labial, micropigmentación de cejas y pestañas pelo a pelo. 9 años de experiencia y garantía estética incluida. Consultorio 309, Edificio Coomeva, Apartadó.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -53,7 +53,7 @@ export const Route = createFileRoute("/")({
           "@type": "BeautySalon",
           name: "Miguel Brows",
           description:
-            "Estudio de cejas: microblading, micropigmentación de labios y extensiones de pestañas en Apartadó, Colombia.",
+            "Estudio de micropigmentación: rejuvenecimiento labial (Labios EYarira, Yayira Lips), cejas (Strokes y Terrranova EBrows) y pestañas pelo a pelo. 9 años de experiencia en Apartadó, Colombia.",
           url: "https://micro-miguelbrows.lovable.app/",
           telephone: PHONE_DISPLAY,
           address: {
@@ -78,6 +78,7 @@ export const Route = createFileRoute("/")({
 
 const NAV = [
   { href: "#inicio", label: "Inicio" },
+  { href: "#nosotros", label: "Nosotros" },
   { href: "#servicios", label: "Servicios" },
   { href: "#resultados", label: "Resultados" },
   { href: "#contacto", label: "Contacto" },
@@ -85,26 +86,47 @@ const NAV = [
 
 const SERVICES = [
   {
-    img: svcMicroblading,
-    title: "Microblading & diseño de cejas",
-    text: "Pelo a pelo con simetría medida según tu rostro, para unas cejas naturales que duran.",
+    img: svcLabios,
+    title: "Rejuvenecimiento labial",
+    tag: "Labios EYarira",
+    text: "Pigmentación suave que devuelve color y vitalidad a tus labios, con acabado natural y uniforme.",
+    note: null as string | null,
   },
   {
-    img: svcLips,
-    title: "Micropigmentación de labios",
-    text: "Color suave y uniforme que realza el contorno y devuelve vitalidad a tus labios.",
+    img: svcYayira,
+    title: "Yayira Lips",
+    tag: "Labios",
+    text: "Para las que quieren subir el nivel de intensidad y expresar su personalidad extrovertida y seductora. Requiere cita de consulta para evaluar tu tipo de piel y ruta de colorimetría.",
+    note: "Requiere consulta previa",
   },
   {
-    img: svcLashes,
-    title: "Extensiones de pestañas",
-    text: "Volumen a la medida, aplicado con técnica segura y materiales premium.",
+    img: svcStrokes,
+    title: "Strokes EBrows Machine",
+    tag: "Cejas",
+    text: "Técnica sublime pensada para quienes quieren ir de menos a más y conservar la mayor naturalidad posible.",
+    note: "Duración 2 años · Garantía estética incluida",
+  },
+  {
+    img: svcTerranova,
+    title: "Terrranova EBrows",
+    tag: "Cejas",
+    text: "Técnica sublime para ir de menos a más conservando la mayor naturalidad posible, con un acabado definido y elegante.",
+    note: "Duración 2 años · Garantía estética incluida",
+  },
+  {
+    img: svcPestanas,
+    title: "Pestañas pelos a pelo",
+    tag: "Pestañas",
+    text: "Requiere cita de consulta donde evaluamos tu tipo de piel y ruta de colorimetría. Una mirada con el toque que encanta.",
+    note: "Garantía estética incluida · Duración estimada 2 años",
   },
 ];
 
 const RESULTS = [
-  { img: result1, caption: "Microblading pelo a pelo" },
-  { img: result2, caption: "Diseño de cejas con simetría" },
-  { img: result3, caption: "Powder brows acabado natural" },
+  { img: svcLabios, caption: "Rejuvenecimiento labial · Labios EYarira" },
+  { img: svcStrokes, caption: "Strokes EBrows Machine · pelo a pelo" },
+  { img: svcTerranova, caption: "Terrranova EBrows · acabado natural" },
+  { img: resultPestanas, caption: "Pestañas pelos a pelo" },
 ];
 
 const TESTIMONIALS = [
@@ -205,11 +227,56 @@ function Landing() {
           </div>
         </section>
 
+        {/* SOBRE MIGUEL */}
+        <section id="nosotros" className="bg-sand/60 py-14 md:py-20">
+          <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 md:grid-cols-2">
+            <div className="order-2 md:order-1">
+              <p className="eyebrow">Sobre Miguel Brows</p>
+              <h2 className="mt-3 text-3xl md:text-4xl">9 años perfeccionando tu mirada</h2>
+              <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+                Durante 9 años hemos brindado nuestros procedimientos con la más alta calidad,
+                cubriendo las expectativas y ofreciendo las garantías correspondientes. Miguel Brows
+                es cosmetólogo, maquillador permanente y actualmente se desarrolla como futuro
+                ingeniero sanitario.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                Su equipo de trabajo está capacitado para ofrecerte una atención humana y profesional,
+                con técnicas certificadas y materiales premium.
+              </p>
+              <ul className="mt-6 flex flex-wrap gap-3 text-sm">
+                <li className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 shadow-[var(--shadow-soft)]">
+                  <span className="size-1.5 rounded-full bg-gold" aria-hidden="true" /> Cosmetólogo
+                </li>
+                <li className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 shadow-[var(--shadow-soft)]">
+                  <span className="size-1.5 rounded-full bg-gold" aria-hidden="true" /> Maquillador permanente
+                </li>
+                <li className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 shadow-[var(--shadow-soft)]">
+                  <span className="size-1.5 rounded-full bg-gold" aria-hidden="true" /> Futuro ingeniero sanitario
+                </li>
+              </ul>
+            </div>
+            <div className="order-1 md:order-2">
+              <img
+                src={teamImg}
+                alt="Miguel, cosmetólogo y maquillador permanente de Miguel Brows"
+                width={640}
+                height={853}
+                loading="lazy"
+                className="w-full rounded-[2rem] object-cover shadow-[var(--shadow-card)]"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* SERVICIOS */}
         <section id="servicios" className="mx-auto max-w-6xl px-5 py-12 md:py-20">
           <div className="max-w-xl">
             <p className="eyebrow">Nuestros servicios</p>
             <h2 className="mt-3 text-3xl md:text-4xl">Técnicas pensadas para tu rostro</h2>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              El precio de cada procedimiento se define en una evaluación previa. Agenda tu cita por
+              WhatsApp y recibe atención personalizada.
+            </p>
           </div>
 
           <div className="mt-10 grid gap-7 md:grid-cols-3">
@@ -220,7 +287,7 @@ function Landing() {
               >
                 <div className="relative">
                   <img
-                    src={s.img}
+                    src={s.img.url}
                     alt={s.title}
                     width={1024}
                     height={768}
@@ -228,12 +295,18 @@ function Landing() {
                     className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                   <span className="absolute bottom-3 left-3 rounded-full bg-card px-3 py-1.5 text-[0.7rem] font-semibold tracking-wide text-gold shadow-[var(--shadow-soft)]">
-                    CERTIFICADO CME
+                    {s.tag}
                   </span>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl">{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
+                  {s.note ? (
+                    <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-gold-soft/60 px-3 py-1.5 text-[0.72rem] font-medium text-foreground">
+                      <span className="size-1.5 rounded-full bg-gold" aria-hidden="true" />
+                      {s.note}
+                    </p>
+                  ) : null}
                 </div>
               </article>
             ))}
@@ -297,7 +370,7 @@ function Landing() {
             items={RESULTS.map((r) => (
               <figure key={r.caption} className="overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-card)]">
                 <img
-                  src={r.img}
+                  src={r.img.url}
                   alt={r.caption}
                   width={1024}
                   height={768}
