@@ -226,11 +226,56 @@ function Landing() {
           </div>
         </section>
 
+        {/* SOBRE MIGUEL */}
+        <section id="nosotros" className="bg-sand/60 py-14 md:py-20">
+          <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 md:grid-cols-2">
+            <div className="order-2 md:order-1">
+              <p className="eyebrow">Sobre Miguel Brows</p>
+              <h2 className="mt-3 text-3xl md:text-4xl">9 años perfeccionando tu mirada</h2>
+              <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+                Durante 9 años hemos brindado nuestros procedimientos con la más alta calidad,
+                cubriendo las expectativas y ofreciendo las garantías correspondientes. Miguel Brows
+                es cosmetólogo, maquillador permanente y actualmente se desarrolla como futuro
+                ingeniero sanitario.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                Su equipo de trabajo está capacitado para ofrecerte una atención humana y profesional,
+                con técnicas certificadas y materiales premium.
+              </p>
+              <ul className="mt-6 flex flex-wrap gap-3 text-sm">
+                <li className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 shadow-[var(--shadow-soft)]">
+                  <span className="size-1.5 rounded-full bg-gold" aria-hidden="true" /> Cosmetólogo
+                </li>
+                <li className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 shadow-[var(--shadow-soft)]">
+                  <span className="size-1.5 rounded-full bg-gold" aria-hidden="true" /> Maquillador permanente
+                </li>
+                <li className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 shadow-[var(--shadow-soft)]">
+                  <span className="size-1.5 rounded-full bg-gold" aria-hidden="true" /> Futuro ingeniero sanitario
+                </li>
+              </ul>
+            </div>
+            <div className="order-1 md:order-2">
+              <img
+                src={teamImg}
+                alt="Miguel, cosmetólogo y maquillador permanente de Miguel Brows"
+                width={640}
+                height={853}
+                loading="lazy"
+                className="w-full rounded-[2rem] object-cover shadow-[var(--shadow-card)]"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* SERVICIOS */}
         <section id="servicios" className="mx-auto max-w-6xl px-5 py-12 md:py-20">
           <div className="max-w-xl">
             <p className="eyebrow">Nuestros servicios</p>
             <h2 className="mt-3 text-3xl md:text-4xl">Técnicas pensadas para tu rostro</h2>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              El precio de cada procedimiento se define en una evaluación previa. Agenda tu cita por
+              WhatsApp y recibe atención personalizada.
+            </p>
           </div>
 
           <div className="mt-10 grid gap-7 md:grid-cols-3">
