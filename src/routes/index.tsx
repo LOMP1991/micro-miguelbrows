@@ -9,6 +9,7 @@ import svcTerranova from "@/assets/service-terranova-ebrows.png";
 import svcPestanas from "@/assets/service-pestanas-pelo-a-pelo.png";
 import resultPestanas from "@/assets/result-pestanas.png";
 import { Carousel } from "@/components/site/Carousel";
+import { BookingForm } from "@/components/site/BookingForm";
 import {
   InstagramIcon,
   PhoneIcon,
@@ -311,6 +312,18 @@ function Landing() {
               </article>
             ))}
           </div>
+        </section>
+
+        {/* SOLICITUD DE CITA */}
+        <section id="cita" className="mx-auto max-w-4xl px-5 py-10 md:py-14">
+          <div className="mb-8 text-center">
+            <p className="eyebrow">Agenda tu cita</p>
+            <h2 className="mt-3 text-3xl md:text-4xl">Solicita tu cita</h2>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Elige el servicio y la fecha que prefieres; te confirmamos por WhatsApp.
+            </p>
+          </div>
+          <BookingForm services={SERVICES.map((s) => s.title)} />
         </section>
 
         {/* BARRA DE CONTACTO */}
