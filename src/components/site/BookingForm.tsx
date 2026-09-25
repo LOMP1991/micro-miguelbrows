@@ -56,7 +56,7 @@ export function BookingForm({ services }: { services: string[] }) {
       <label className="text-sm font-medium">
         Nombre
         <input name="name" maxLength={80} autoComplete="name" className={field} placeholder="Tu nombre" />
-        {errors.name && <span className="mt-1 block text-xs text-destructive">{errors.name}</span>}
+        {errors["name"] && <span className="mt-1 block text-xs text-destructive">{errors["name"]}</span>}
       </label>
       <label className="text-sm font-medium">
         Servicio
@@ -70,17 +70,17 @@ export function BookingForm({ services }: { services: string[] }) {
             </option>
           ))}
         </select>
-        {errors.service && <span className="mt-1 block text-xs text-destructive">{errors.service}</span>}
+        {errors["service"] && <span className="mt-1 block text-xs text-destructive">{errors["service"]}</span>}
       </label>
       <label className="text-sm font-medium">
         Fecha preferida
         <input type="date" name="date" min={today} className={field} />
-        {errors.date && <span className="mt-1 block text-xs text-destructive">{errors.date}</span>}
+        {errors["date"] && <span className="mt-1 block text-xs text-destructive">{errors["date"]}</span>}
       </label>
       <label className="text-sm font-medium">
         Comentario (opcional)
         <input name="message" maxLength={300} className={field} placeholder="Horario, dudas…" />
-        {errors.message && <span className="mt-1 block text-xs text-destructive">{errors.message}</span>}
+        {errors["message"] && <span className="mt-1 block text-xs text-destructive">{errors["message"]}</span>}
       </label>
       <div className="md:col-span-2">
         <button
