@@ -2,12 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import heroImg from "@/assets/hero.jpg";
 import teamImg from "@/assets/team-miguel.jpg";
-import svcLabios from "@/assets/service-rejuvenecimiento-labial.png.asset.json";
-import svcYayira from "@/assets/service-yayira-lips.png.asset.json";
-import svcStrokes from "@/assets/service-strokes-ebrows.png.asset.json";
-import svcTerranova from "@/assets/service-terranova-ebrows.png.asset.json";
-import svcPestanas from "@/assets/service-pestanas-pelo-a-pelo.png.asset.json";
-import resultPestanas from "@/assets/result-pestanas.png.asset.json";
+import svcLabios from "@/assets/service-rejuvenecimiento-labial.png";
+import svcYayira from "@/assets/service-yayira-lips.png";
+import svcStrokes from "@/assets/service-strokes-ebrows.png";
+import svcTerranova from "@/assets/service-terranova-ebrows.png";
+import svcPestanas from "@/assets/service-pestanas-pelo-a-pelo.png";
+import resultPestanas from "@/assets/result-pestanas.png";
 import { Carousel } from "@/components/site/Carousel";
 import {
   InstagramIcon,
@@ -287,7 +287,7 @@ function Landing() {
               >
                 <div className="relative">
                   <img
-                    src={s.img.url}
+                    src={s.img}
                     alt={s.title}
                     width={1024}
                     height={768}
@@ -370,7 +370,7 @@ function Landing() {
             items={RESULTS.map((r) => (
               <figure key={r.caption} className="overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-card)]">
                 <img
-                  src={r.img.url}
+                  src={r.img}
                   alt={r.caption}
                   width={1024}
                   height={768}
