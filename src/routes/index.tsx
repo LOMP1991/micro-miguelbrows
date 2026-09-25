@@ -2,13 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import heroImg from "@/assets/hero.jpg";
 import teamImg from "@/assets/team-miguel.jpg";
-import svcLabios from "@/assets/service-rejuvenecimiento-labial.png.asset.json";
-import svcYayira from "@/assets/service-yayira-lips.png.asset.json";
-import svcStrokes from "@/assets/service-strokes-ebrows.png.asset.json";
-import svcTerranova from "@/assets/service-terranova-ebrows.png.asset.json";
-import svcPestanas from "@/assets/service-pestanas-pelo-a-pelo.png.asset.json";
-import resultPestanas from "@/assets/result-pestanas.png.asset.json";
+import svcLabios from "@/assets/service-rejuvenecimiento-labial.png";
+import svcYayira from "@/assets/service-yayira-lips.png";
+import svcStrokes from "@/assets/service-strokes-ebrows.png";
+import svcTerranova from "@/assets/service-terranova-ebrows.png";
+import svcPestanas from "@/assets/service-pestanas-pelo-a-pelo.png";
+import resultPestanas from "@/assets/result-pestanas.png";
 import { Carousel } from "@/components/site/Carousel";
+import { BookingForm } from "@/components/site/BookingForm";
 import {
   InstagramIcon,
   PhoneIcon,
@@ -287,7 +288,7 @@ function Landing() {
               >
                 <div className="relative">
                   <img
-                    src={s.img.url}
+                    src={s.img}
                     alt={s.title}
                     width={1024}
                     height={768}
@@ -311,6 +312,18 @@ function Landing() {
               </article>
             ))}
           </div>
+        </section>
+
+        {/* SOLICITUD DE CITA */}
+        <section id="cita" className="mx-auto max-w-4xl px-5 py-10 md:py-14">
+          <div className="mb-8 text-center">
+            <p className="eyebrow">Agenda tu cita</p>
+            <h2 className="mt-3 text-3xl md:text-4xl">Solicita tu cita</h2>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Elige el servicio y la fecha que prefieres; te confirmamos por WhatsApp.
+            </p>
+          </div>
+          <BookingForm services={SERVICES.map((s) => s.title)} />
         </section>
 
         {/* BARRA DE CONTACTO */}
@@ -370,7 +383,7 @@ function Landing() {
             items={RESULTS.map((r) => (
               <figure key={r.caption} className="overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-card)]">
                 <img
-                  src={r.img.url}
+                  src={r.img}
                   alt={r.caption}
                   width={1024}
                   height={768}
