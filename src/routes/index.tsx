@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "Miguel Brows | Cejas y micropigmentación en Apartadó" },
+      { title: "Miguel Brows | Estética Facial, ¡Rostro Joven y Hermoso Todos los Días!" },
       {
         name: "description",
         content:
