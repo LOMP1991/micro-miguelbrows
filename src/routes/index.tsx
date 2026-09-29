@@ -200,14 +200,14 @@ function Landing() {
               />
             </div>
             <div className="order-1 md:order-2">
-              <p className="eyebrow">Estudio de cejas · Apartadó</p>
+              <p className="eyebrow">Estética Facial · Apartadó</p>
               <h1 className="mt-4 text-4xl leading-[1.1] md:text-5xl lg:text-6xl">
-                Cejas que enmarcan tu mirada
+                ¡Rostro Joven y Hermoso Todos los Días!
               </h1>
               <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
-                Microblading, micropigmentación y diseño personalizado con técnicos
-                certificados. Resultados naturales, simétricos y duraderos en un espacio
-                pensado para tu comodidad.
+                Nuestra micropigmentación estética en labios, ojos y cejas es realizada 
+                con productos de máxima calidad internacional, garantizando resultados estables, 
+                naturales y hermosos a largo plazo. Contamos con diferentes técnicas según tu preferencia..
               </p>
               <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-sand px-4 py-2 text-sm">
                 <PinIcon className="size-4 text-gold" />
