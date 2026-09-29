@@ -3,7 +3,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero.jpg";
 import teamImg from "@/assets/team-miguel.jpg";
 import svcLabios from "@/assets/service-rejuvenecimiento-labial.png";
-import svcYayira from "@/assets/service-yayira-lips.png";
+import svcYayira from "@/assets/service-yayira-lips.jpeg";
+import svcYayira1 from "@/assets/service-yayira-lips-1.jpeg";
+import svcYayira2 from "@/assets/service-yayira-lips-2.jpeg";
+import svcYayira3 from "@/assets/service-yayira-lips-3.jpeg";
+import svcYayira4 from "@/assets/service-yayira-lips-4.jpeg";
 import svcStrokes from "@/assets/service-strokes-ebrows.png";
 import svcTerranova from "@/assets/service-terranova-ebrows.png";
 import svcPestanas from "@/assets/service-pestanas-pelo-a-pelo.png";
@@ -24,6 +28,7 @@ import {
   PHONE_DISPLAY,
   WHATSAPP_URL,
 } from "@/lib/site";
+import { useState } from "react";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
@@ -85,6 +90,86 @@ const NAV = [
   { href: "#contacto", label: "Contacto" },
 ];
 
+function ServiceImageSlider({ images, alt }: { images: string[]; alt: string }) {
+  const [current, setCurrent] = useState(0);
+  
+   if (images.length <= 1) {
+     return(
+     <img src={images[0]} 
+      alt={alt}
+      width={1024} 
+      height={768} 
+      loading="lazy"
+      className="h-56 w-full object-cover transition duration-500 group-hover:scale-105" 
+     />
+    );
+  }
+
+  const prev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrent((i) => (i - 1 + images.length) % images.length);
+};
+
+  const next = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrent((i) => (i + 1) % images.length);
+  
+  };
+
+  return (
+    <div className="relative h-56 w-full overflow-hidden bg-sand/30">
+      <img
+        src={images[current]}
+        alt={`${alt} ${current + 1}`}
+        width={1024}
+        height={768}
+        loading="lazy"
+        className="h-56 w-full object-cover transition duration-300"
+      />
+
+      {/* Flechas de navegación */}
+      <button
+        type="button"
+        onClick={prev}
+        aria-label="Foto anterior"
+        className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-card/85 p-1.5 text-foreground shadow-sm transition hover:bg-gold hover:text-white"
+      >
+        <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+      </button>
+      <button
+        type="button"
+        onClick={next}
+        aria-label="Siguiente foto"
+        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-card/85 p-1.5 text-foreground shadow-sm transition hover:bg-gold hover:text-white"
+      >
+        <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <path d="m9 6 6 6-6 6" />
+        </svg>
+      </button>
+
+      {/* Puntos indicadores */}
+      <div className="absolute bottom-3 right-3 flex gap-1.5 rounded-full bg-card/80 px-2 py-1 shadow-sm">
+        {images.map((_, idx) => (
+          <button
+            key={idx}
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setCurrent(idx);
+            }}
+            aria-label={`Ver foto ${idx + 1}`}
+            className={`h-1.5 rounded-full transition-all ${
+              idx === current ? "w-4 bg-gold" : "w-1.5 bg-foreground/30"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 const SERVICES = [
   {
     img: svcLabios,
@@ -95,6 +180,7 @@ const SERVICES = [
   },
   {
     img: svcYayira,
+    imagenes: [svcYayira, svcYayira1, svcYayira2, svcYayira3, svcYayira4],
     title: "Yayira Lips",
     tag: "Labios",
     text: "Para las que quieren subir el nivel de intensidad y expresar su personalidad extrovertida y seductora. Requiere cita de consulta para evaluar tu tipo de piel y ruta de colorimetría.",
@@ -287,18 +373,13 @@ function Landing() {
                 className="group overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
               >
                 <div className="relative">
-                  <img
-                    src={s.img}
-                    alt={s.title}
-                    width={1024}
-                    height={768}
-                    loading="lazy"
-                    className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
-                  />
-                  <span className="absolute bottom-3 left-3 rounded-full bg-card px-3 py-1.5 text-[0.7rem] font-semibold tracking-wide text-gold shadow-[var(--shadow-soft)]">
+                  <ServiceImageSlider images={s.imagenes ?? [s.img]} alt={s.title} />
+                  <span className="absolute bottom-3 left-3 rounded-full bg-card px-3 py-1.5 text-[0.7rem] font-semibold 
+                  tracking-wide text-gold shadow-[var(--shodow-soft)]">
                     {s.tag}
                   </span>
                 </div>
+              
                 <div className="p-6">
                   <h3 className="text-xl">{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
