@@ -12,7 +12,6 @@ import svcStrokes from "@/assets/service-strokes-ebrows.png";
 import svcTerranova from "@/assets/service-terranova-ebrows.png";
 import svcPestanas from "@/assets/service-pestanas-pelo-a-pelo.png";
 import resultPestanas from "@/assets/result-pestanas.png";
-import { ServiceGallery } from "@/components/site/ServiceGallery";
 import { Carousel } from "@/components/site/Carousel";
 import { BookingForm } from "@/components/site/BookingForm";
 import {
@@ -93,6 +92,7 @@ const NAV = [
 
 
 // Cada servicio admite varias fotos: agrega imports arriba y añádelos a "images".
+
 function ServiceImageSlider({ images, alt }: { images: string[]; alt: string }) {
   const [current, setCurrent] = useState(0);
   
@@ -274,7 +274,6 @@ function Landing() {
           </nav>
         </div>
       </header>
-
       <main>
         {/* HERO */}
         <section id="inicio" className="mx-auto max-w-6xl px-5 py-12 md:py-20">
@@ -316,7 +315,6 @@ function Landing() {
             </div>
           </div>
         </section>
-
         {/* SOBRE MIGUEL */}
         <section id="nosotros" className="bg-sand/60 py-14 md:py-20">
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 md:grid-cols-2">
@@ -357,7 +355,6 @@ function Landing() {
             </div>
           </div>
         </section>
-
         {/* SERVICIOS */}
         <section id="servicios" className="mx-auto max-w-6xl px-5 py-12 md:py-20">
           <div className="max-w-xl">
@@ -368,39 +365,38 @@ function Landing() {
               WhatsApp y recibe atención personalizada.
             </p>
           </div>
-
           <div className="mt-10 grid gap-7 md:grid-cols-3">
             {SERVICES.map((s) => (
-              <article
-                key={s.title}
-                className="group overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
-              >
-                <div className="relative">
-                  <ServiceGallery images={s.images} alt={s.title} />
-                  <span className="absolute bottom-3 left-3 z-20 rounded-full bg-card px-3 py-1.5 text-[0.7rem] font-semibold tracking-wide text-gold shadow-[var(--shadow-soft)]">
-                  <ServiceImageSlider images={s.imagenes ?? [s.img]} alt={s.title} />
-                  <span className="absolute bottom-3 left-3 rounded-full bg-card px-3 py-1.5 text-[0.7rem] font-semibold 
-                  tracking-wide text-gold shadow-[var(--shadow-soft)]">
-                    {s.tag}
-                  </span>
-                </div>
-                </div>
-              
-                <div className="p-6">
-                  <h3 className="text-xl">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
-                  {s.note ? (
-                    <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-gold-soft/60 px-3 py-1.5 text-[0.72rem] font-medium text-foreground">
-                      <span className="size-1.5 rounded-full bg-gold" aria-hidden="true" />
-                      {s.note}
-                    </p>
-                  ) : null}
-                </div>
-              </article>
-            ))}
+  <article
+    key={s.title}
+    className="group overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
+  >
+    <div className="relative">
+      <ServiceImageSlider images={s.images} alt={s.title} />
+
+      <span className="absolute bottom-3 left-3 z-20 rounded-full bg-card px-3 py-1.5 text-[0.7rem] font-semibold tracking-wide text-gold shadow-[var(--shadow-soft)]">
+        {s.tag}
+      </span>
+    </div>
+    <div className="p-6">
+      <h3 className="text-xl">{s.title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+        {s.text}
+      </p>
+      {s.note ? (
+        <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-gold-soft/60 px-3 py-1.5 text-[0.72rem] font-medium text-foreground">
+          <span
+            className="size-1.5 rounded-full bg-gold"
+            aria-hidden="true"
+          />
+          {s.note}
+        </p>
+      ) : null}
+    </div>
+  </article>
+))}
           </div>
         </section>
-
         {/* SOLICITUD DE CITA */}
         <section id="cita" className="mx-auto max-w-4xl px-5 py-10 md:py-14">
           <div className="mb-8 text-center">
@@ -442,23 +438,20 @@ function Landing() {
                   href={INSTAGRAM_MAIN}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-[var(--shadow-soft)] transition hover:text-gold"
-                >
+                  className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-[var(--shadow-soft)] transition hover:text-gold" >
                   <InstagramIcon className="size-4" /> @miguelbrows
                 </a>
                 <a
                   href={INSTAGRAM_SECOND}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-[var(--shadow-soft)] transition hover:text-gold"
-                >
+                  className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-[var(--shadow-soft)] transition hover:text-gold">
                   <InstagramIcon className="size-4" /> @micro_miguelbrows
                 </a>
               </div>
             </div>
           </div>
         </section>
-
         {/* RESULTADOS */}
         <section id="resultados" className="mx-auto max-w-4xl px-5 py-12 md:py-20">
           <div className="mb-10 text-center">
@@ -513,7 +506,6 @@ function Landing() {
           </div>
         </section>
       </main>
-
       <footer className="bg-ink text-ink-foreground">
         <div className="mx-auto max-w-6xl px-5 py-14">
           <div className="grid gap-10 md:grid-cols-2">
