@@ -86,37 +86,38 @@ const NAV = [
   { href: "#contacto", label: "Contacto" },
 ];
 
+// Cada servicio admite varias fotos: agrega imports arriba y añádelos a "images".
 const SERVICES = [
   {
-    img: svcLabios,
+    images: [svcLabios],
     title: "Rejuvenecimiento labial",
     tag: "Labios EYarira",
     text: "Pigmentación suave que devuelve color y vitalidad a tus labios, con acabado natural y uniforme.",
     note: null as string | null,
   },
   {
-    img: svcYayira,
+    images: [svcYayira],
     title: "Yayira Lips",
     tag: "Labios",
     text: "Para las que quieren subir el nivel de intensidad y expresar su personalidad extrovertida y seductora. Requiere cita de consulta para evaluar tu tipo de piel y ruta de colorimetría.",
     note: "Requiere consulta previa",
   },
   {
-    img: svcStrokes,
+    images: [svcStrokes],
     title: "Strokes EBrows Machine",
     tag: "Cejas",
     text: "Técnica sublime pensada para quienes quieren ir de menos a más y conservar la mayor naturalidad posible.",
     note: "Duración 2 años · Garantía estética incluida",
   },
   {
-    img: svcTerranova,
+    images: [svcTerranova],
     title: "Terrranova EBrows",
     tag: "Cejas",
     text: "Técnica sublime para ir de menos a más conservando la mayor naturalidad posible, con un acabado definido y elegante.",
     note: "Duración 2 años · Garantía estética incluida",
   },
   {
-    img: svcPestanas,
+    images: [svcPestanas],
     title: "Pestañas pelos a pelo",
     tag: "Pestañas",
     text: "Requiere cita de consulta donde evaluamos tu tipo de piel y ruta de colorimetría. Una mirada con el toque que encanta.",
