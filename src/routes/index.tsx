@@ -9,6 +9,7 @@ import svcYayira2 from "@/assets/service-yayira-lips-2.jpeg";
 import svcYayira3 from "@/assets/service-yayira-lips-3.jpeg";
 import svcYayira4 from "@/assets/service-yayira-lips-4.jpeg";
 import svcStrokes from "@/assets/service-strokes-ebrows.png";
+import svcCofacial from "@/assets/service-spa-facial.jpeg";
 import svcTerranova from "@/assets/service-terranova-ebrows.png";
 import svcPestanas from "@/assets/service-pestanas-pelo-a-pelo.png";
 import resultPestanas from "@/assets/result-pestanas.png";
@@ -210,8 +211,15 @@ const SERVICES = [
     text: "Requiere cita de consulta donde evaluamos tu tipo de piel y ruta de colorimetría. Una mirada con el toque que encanta.",
     note: "Garantía estética incluida · Duración estimada 2 años",
   },
+   {
+  
+    images: [svcCofacial],
+    title: "Spa Facial",
+    tag: "Facial",
+    text: "Limpieza profunda, hidratación y revitalización del rostro para una piel luminosa, tersa y saludable.",
+    note: "Agenda tu valoración previa",
+  },
 ];
-
 const RESULTS = [
   { img: svcLabios, caption: "Rejuvenecimiento labial · Labios EYarira" },
   { img: svcStrokes, caption: "Strokes EBrows Machine · pelo a pelo" },
@@ -408,7 +416,6 @@ function Landing() {
           </div>
           <BookingForm services={SERVICES.map((s) => s.title)} />
         </section>
-
         {/* BARRA DE CONTACTO */}
         <section id="contacto" className="mx-auto max-w-6xl px-5 py-6 md:py-10">
           <div className="grid overflow-hidden rounded-3xl shadow-[var(--shadow-card)] md:grid-cols-2">
