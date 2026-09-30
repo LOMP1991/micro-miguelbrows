@@ -375,7 +375,7 @@ function Landing() {
                 <div className="relative">
                   <ServiceImageSlider images={s.imagenes ?? [s.img]} alt={s.title} />
                   <span className="absolute bottom-3 left-3 rounded-full bg-card px-3 py-1.5 text-[0.7rem] font-semibold 
-                  tracking-wide text-gold shadow-[var(--shodow-soft)]">
+                  tracking-wide text-gold shadow-[var(--shadow-soft)]">
                     {s.tag}
                   </span>
                 </div>
