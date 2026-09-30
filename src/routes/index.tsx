@@ -8,6 +8,7 @@ import svcStrokes from "@/assets/service-strokes-ebrows.png";
 import svcTerranova from "@/assets/service-terranova-ebrows.png";
 import svcPestanas from "@/assets/service-pestanas-pelo-a-pelo.png";
 import resultPestanas from "@/assets/result-pestanas.png";
+import { ServiceGallery } from "@/components/site/ServiceGallery";
 import { Carousel } from "@/components/site/Carousel";
 import { BookingForm } from "@/components/site/BookingForm";
 import {
