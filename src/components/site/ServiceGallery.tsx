@@ -18,11 +18,13 @@ export function ServiceGallery({
         className="flex h-full transition-transform duration-500 ease-out"
         style={{ transform: `translateX(-${index * 100}%)` }}
         onTouchStart={(e) => {
-          touchStartX.current = e.touches[0].clientX;
+          const t = e.touches[0];
+          if (t) touchStartX.current = t.clientX;
         }}
         onTouchEnd={(e) => {
-          if (touchStartX.current === null) return;
-          const dx = e.changedTouches[0].clientX - touchStartX.current;
+          const t = e.changedTouches[0];
+          if (touchStartX.current === null || !t) return;
+          const dx = t.clientX - touchStartX.current;
           if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
           touchStartX.current = null;
         }}
