@@ -289,15 +289,8 @@ function Landing() {
                 className="group overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
               >
                 <div className="relative">
-                  <img
-                    src={s.img}
-                    alt={s.title}
-                    width={1024}
-                    height={768}
-                    loading="lazy"
-                    className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
-                  />
-                  <span className="absolute bottom-3 left-3 rounded-full bg-card px-3 py-1.5 text-[0.7rem] font-semibold tracking-wide text-gold shadow-[var(--shadow-soft)]">
+                  <ServiceGallery images={s.images} alt={s.title} />
+                  <span className="absolute bottom-3 left-3 z-20 rounded-full bg-card px-3 py-1.5 text-[0.7rem] font-semibold tracking-wide text-gold shadow-[var(--shadow-soft)]">
                     {s.tag}
                   </span>
                 </div>
