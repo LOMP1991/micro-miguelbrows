@@ -10,6 +10,20 @@ import svcYayira3 from "@/assets/service-yayira-lips-3.jpeg";
 import svcYayira4 from "@/assets/service-yayira-lips-4.jpeg";
 import svcStrokes from "@/assets/service-strokes-ebrows.png";
 import svcCofacial from "@/assets/service-spa-facial.jpeg";
+import svcCofacial1 from "@/assets/service-spa-facial-1.jpeg";
+import svcCofacial2 from "@/assets/service-spa-facial-2.jpeg";
+import svcCofacial3 from "@/assets/service-spa-facial-3.jpeg";
+import svcCofacial4 from "@/assets/service-spa-facial-4.jpeg";
+import svcCofacial5 from "@/assets/service-spa-facial-5.jpeg";
+import svcCapilar from "@/assets/service-area-capilar.jpeg";
+import svcCapilar1 from "@/assets/service-area-capilar-1.jpeg";
+import svcCapilar2 from "@/assets/service-area-capilar-2.jpeg";
+import svcMicro from "@/assets/service-micropigmentacion.jpeg";
+import svcMicro1 from "@/assets/service-micropigmentacion-1.jpeg";
+import svcMicro2 from "@/assets/service-micropigmentacion-2.jpeg";
+import svcMicro3 from "@/assets/service-micropigmentacion-3.jpeg";
+import svcMicro4 from "@/assets/service-micropigmentacion-4.jpeg";
+
 import svcTerranova from "@/assets/service-terranova-ebrows.png";
 import svcPestanas from "@/assets/service-pestanas-pelo-a-pelo.png";
 import resultPestanas from "@/assets/result-pestanas.png";
@@ -211,20 +225,39 @@ const SERVICES = [
     text: "Requiere cita de consulta donde evaluamos tu tipo de piel y ruta de colorimetría. Una mirada con el toque que encanta.",
     note: "Garantía estética incluida · Duración estimada 2 años",
   },
-   {
+  {
   
-    images: [svcCofacial],
+    images: [svcCofacial, svcCofacial1, svcCofacial2, svcCofacial3, svcCofacial4, svcCofacial5],
     title: "Spa Facial",
     tag: "Facial",
     text: "Limpieza profunda, hidratación y revitalización del rostro para una piel luminosa, tersa y saludable.",
     note: "Agenda tu valoración previa",
   },
+  {
+    images: [svcCapilar, svcCapilar1, svcCapilar2],
+    title: "Área Capilar",
+    tag: "Capilar",
+    text: "Micropigmentación capilar para densificar zonas con poca cantidad de cabello, logrando un acabado natural e imperceptible.",
+    note: "Agenda tu valoración previa",
+  },
+  {
+    images: [svcMicro, svcMicro1, svcMicro2, svcMicro3, svcMicro4], 
+    title: "Micropigmentación",
+    tag: "Micropigmentación",
+    text: "Técnica de maquillaje semipermanente para realzar rasgos faciales, corregir imperfecciones y lograr un acabado natural.",
+    note: "Duración 2 años · Garantía estética incluida",
+  }
+
 ];
 const RESULTS = [
   { img: svcLabios, caption: "Rejuvenecimiento labial · Labios EYarira" },
   { img: svcStrokes, caption: "Strokes EBrows Machine · pelo a pelo" },
   { img: svcTerranova, caption: "Terrranova EBrows · acabado natural" },
   { img: resultPestanas, caption: "Pestañas pelos a pelo" },
+  { img: svcCofacial, caption: "Spa Facial · Limpieza profunda" },
+  { img: svcCapilar1, caption: "Área Capilar · Densificación de cabello" },
+  { img: svcCapilar2, caption: "Área Capilar · Densificación de cabello" },
+  { img: svcMicro, caption: "Micropigmentación · Acabado natural" },
 ];
 
 const TESTIMONIALS = [
