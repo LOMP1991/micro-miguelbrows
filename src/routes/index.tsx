@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-
 import heroImg from "@/assets/hero.jpg";
 import teamImg from "@/assets/team-miguel.jpg";
 import svcLabios from "@/assets/service-rejuvenecimiento-labial.png";
@@ -23,7 +22,6 @@ import svcMicro1 from "@/assets/service-micropigmentacion-1.jpeg";
 import svcMicro2 from "@/assets/service-micropigmentacion-2.jpeg";
 import svcMicro3 from "@/assets/service-micropigmentacion-3.jpeg";
 import svcMicro4 from "@/assets/service-micropigmentacion-4.jpeg";
-
 import svcTerranova from "@/assets/service-terranova-ebrows.png";
 import svcPestanas from "@/assets/service-pestanas-pelo-a-pelo.png";
 import resultPestanas from "@/assets/result-pestanas.png";
@@ -108,25 +106,29 @@ const NAV = [
 
 // Cada servicio admite varias fotos: agrega imports arriba y añádelos a "images".
 
-function ServiceImageSlider({ images, alt }: { images: string[]; alt: string }) {
+function ServiceImageSlider({ images, alt,onOpen }: { images: string[]; alt: string; onOpen?: (src: string) => void }) {
   const [current, setCurrent] = useState(0);
   
    if (images.length <= 1) {
      return(
-     <img src={images[0]} 
-      alt={alt}
-      width={1024} 
-      height={768} 
-      loading="lazy"
-      className="h-56 w-full object-cover transition duration-500 group-hover:scale-105" 
-     />
+     <div className="relative h-64 w-full overflow-hidden bg-sand/30">
+       <img 
+         src={images[0]} 
+         alt={alt}
+         onClick={() => onOpen?.(images[0])}
+         width={1024} 
+         height={768} 
+         loading="lazy"
+         className="h-56 w-full cursor-zoom-in object-cover transition duration-500 hover:scale-105" 
+       />
+      </div>
     );
   }
 
   const prev = (e: React.MouseEvent) => {
     e.stopPropagation();
     setCurrent((i) => (i - 1 + images.length) % images.length);
-};
+  };
 
   const next = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -142,7 +144,8 @@ function ServiceImageSlider({ images, alt }: { images: string[]; alt: string }) 
         width={1024}
         height={768}
         loading="lazy"
-        className="h-56 w-full object-cover transition duration-300"
+        onClick={() => onOpen?.(images[current])}
+        className="h-56 w-full cursor-zoom-in object-cover transition duration-300"
       />
 
       {/* Flechas de navegación */}
@@ -276,6 +279,7 @@ const TESTIMONIALS = [
 ];
 
 function Landing() {
+  const[modalImage, setModalImage] = useState<string | null>(null);
   return (
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur">
@@ -413,7 +417,7 @@ function Landing() {
     className="group overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
   >
     <div className="relative">
-      <ServiceImageSlider images={s.images} alt={s.title} />
+      <ServiceImageSlider images={s.images} alt={s.title} onOpen={(src) => setModalImage(src)}/>
 
       <span className="absolute bottom-3 left-3 z-20 rounded-full bg-card px-3 py-1.5 text-[0.7rem] font-semibold tracking-wide text-gold shadow-[var(--shadow-soft)]">
         {s.tag}
@@ -599,6 +603,28 @@ function Landing() {
           </p>
         </div>
       </footer>
+      {/* Modal / Lightbox a pantalla completa */}
+      {modalImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm transition-opacity"
+          onClick={() => setModalImage(null)}
+        >
+          <button
+            type="button"
+            className="absolute right-5 top-5 z-50 flex size-10 items-center justify-center rounded-full bg-black/60 text-2xl text-white hover:text-gold"
+            onClick={() => setModalImage(null)}
+            aria-label="Cerrar vista previa"
+          >
+            ✕
+          </button>
+          <img
+            src={modalImage}
+            alt="Vista completa del procedimiento"
+            className="max-h-[90vh] max-w-[95vw] rounded-2xl object-contain shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }
